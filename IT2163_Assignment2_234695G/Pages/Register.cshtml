@@ -1,0 +1,36 @@
+﻿@page
+@model IT2163_Assignment2_234695G.Pages.RegisterModel
+@{
+}
+
+<form method="post" enctype="multipart/form-data">
+    <input type="text" asp-for="Input.FirstName" required placeholder="First Name" />
+    <input type="text" asp-for="Input.LastName" required placeholder="Last Name" />
+
+    <select asp-for="Input.Gender" required>
+        <option value="">Select Gender</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
+    </select>
+    <span asp-validation-for="Input.Gender" class="text-danger"></span>
+
+    <input type="email" asp-for="Input.Email" required placeholder="Email" />
+    <input type="password" asp-for="Input.Password" required placeholder="Password" />
+    <span asp-validation-for="Input.Password" class="text-danger"></span>
+    <input type="password" asp-for="Input.ConfirmPassword" required placeholder="Confirm Password" />
+    <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+
+    <!-- Add NRIC Field -->
+    <input type="text" asp-for="Input.NRIC" required placeholder="NRIC" />
+    <span asp-validation-for="Input.NRIC" class="text-danger"></span>
+
+    <!-- Add WhoAmI Field -->
+    <textarea asp-for="Input.WhoAmI" placeholder="Tell us about yourself (Who Am I?)" rows="4"></textarea>
+    <span asp-validation-for="Input.WhoAmI" class="text-danger"></span>
+
+    <input type="file" asp-for="Input.ResumeFile" accept=".pdf,.docx" />
+    <button type="submit">Register</button>
+</form>
+
+<p>Already have an account? <a asp-page="Login">Login here</a></p>
