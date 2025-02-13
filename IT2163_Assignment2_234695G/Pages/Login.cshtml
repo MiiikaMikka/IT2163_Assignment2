@@ -1,11 +1,49 @@
 ﻿@page
 @model IT2163_Assignment2_234695G.Pages.LoginModel
-@{
-    ViewData["Title"] = "Login";
-}
-<form method="post">
-    <input type="email" asp-for="Input.Email" required placeholder="Email" />
-    <input type="password" asp-for="Input.Password" required placeholder="Password" />
-    <button type="submit">Login</button>
-</form>
-<p>Don't have an account? <a asp-page="Register">Register here</a></p>
+@using Microsoft.Extensions.Configuration
+@inject IConfiguration Configuration
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <!-- Add Google reCAPTCHA v3 script -->
+    <script src="https://www.google.com/recaptcha/api.js?render=@Configuration["GoogleReCaptcha:SiteKey"]"></script>
+</head>
+<body>
+
+    <form method="post">
+        <!-- Display validation summary for overall errors -->
+        <div asp-validation-summary="All" class="text-danger"></div>
+
+        <input type="email" asp-for="Input.Email" required placeholder="Email" />
+        <span asp-validation-for="Input.Email" class="text-danger"></span>
+
+        <input type="password" asp-for="Input.Password" required placeholder="Password" />
+        <span asp-validation-for="Input.Password" class="text-danger"></span>
+
+        <!-- Hidden field to store reCAPTCHA response -->
+        <input type="hidden" name="recaptchaResponse" id="recaptchaResponse" />
+
+        <button type="submit" onclick="submitForm()">Login</button>
+    </form>
+    <p><a asp-page="ForgotPasswordModel">Forgot Password?</a></p>
+
+    <p>Don't have an account? <a asp-page="Register">Register here</a></p>
+
+    <script>
+        // Function to execute reCAPTCHA and set the response token
+        function submitForm() {
+            event.preventDefault(); // Prevent default form submission
+            grecaptcha.execute('@Configuration["GoogleReCaptcha:SiteKey"]', { action: 'login' }).then(function (token) {
+                // Set the value of the hidden input field
+                document.getElementById('recaptchaResponse').value = token;
+                // Now submit the form
+                document.querySelector('form').submit();
+            });
+        }
+    </script>
+
+</body>
+</html>

@@ -7,6 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Pages\OTPVerify.cshtml" />
+    <Content Remove="Pages\VerifyOTP.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
     <PackageReference Include="GoogleReCaptcha.V3" Version="1.3.1" />
     <PackageReference Include="Microsoft.AspNetCore.DataProtection" Version="8.0.10" />
@@ -17,10 +22,29 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Migrations\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Pages\VerifyOTP.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Pages\OTPVerify.cshtml" />
+    <_ContentIncludedByDefault Remove="Pages\VerifyOTP.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Pages\OTPVerify.cshtml" />
+    <None Include="Pages\VerifyOTP.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Pages\OTPVerify.cshtml" />
   </ItemGroup>
 
 </Project>

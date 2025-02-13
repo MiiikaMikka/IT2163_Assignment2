@@ -59,6 +59,15 @@ namespace IT2163_Assignment2_234695G.Pages
             {
                 if (ModelState.IsValid)
                 {
+
+                    string basePath = @"C:\Users\DonTJ\Desktop\School\Year 2\Year 2 Sem 2\Application Security\Assignment_2\IT2163_Assignment2_234695G\IT2163_Assignment2_234695G\Resumes";
+
+                    var filePath = Path.Combine(basePath, Input.ResumeFile.FileName);
+                    using (var stream = new FileStream(filePath, FileMode.Create))
+                    {
+                        await Input.ResumeFile.CopyToAsync(stream);
+                    }
+
                     // Validate password complexity
                     if (!Regex.IsMatch(Input.Password, @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{12,}$"))
                     {
@@ -105,6 +114,8 @@ namespace IT2163_Assignment2_234695G.Pages
                             EncryptedNRIC = encryptedNRIC, // Store the encrypted NRIC
                             WhoAmI = Input.WhoAmI, // Set WhoAmI field
 
+                            ResumePath = filePath,
+
                             PasswordHash = identityUser.PasswordHash, // Storing the hashed password
                             CreatedAt = DateTime.UtcNow,
                         };
@@ -134,6 +145,9 @@ namespace IT2163_Assignment2_234695G.Pages
             }
             catch (Exception ex)
             {
+                ModelState.AddModelError(string.Empty, "An unexpected error occurred. Please try again.");
+                return Page();
+
                 Console.WriteLine($"Unexpected error: {ex.Message}");
                 Console.WriteLine($"Stack Trace: {ex.StackTrace}");
                 _logger.LogError(ex, "An unexpected error occurred during registration.");

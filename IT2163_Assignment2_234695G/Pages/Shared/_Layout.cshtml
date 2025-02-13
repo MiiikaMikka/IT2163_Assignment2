@@ -10,7 +10,7 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav style="display: flex; justify-content: space-between; align-items: center; padding: 1rem; background-color: #f8f9fa; border-bottom: 1px solid #ddd;" class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-page="/Index">IT2163_Assignment2_234695G</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -29,10 +29,32 @@
                             <a class="nav-link text-dark" asp-area="" asp-action="/Register">Register</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Login">Login</a>
+                            
                         </li>
                     </ul>
                 </div>
+            </div>
+            <!-- Right side of the navbar -->
+            <div>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    //<form method="post" asp-page="/Logout" style="display: inline;">
+                    //    <button type="submit" style="padding: 0.5rem 1rem; background-color: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer;">
+                    //        Logout
+                    //    </button>
+                    //</form>
+
+                    <a onclick="return confirm('Are you sure you want to log out?');" asp-page="Logout" class="btn btn-danger">Logout</a>
+
+                }
+                else
+                {
+                    <!-- Container for Login and Register side by side -->
+                    <div style="display: flex; gap: 1rem;">
+                        <a asp-page="/Login" style="padding: 0.5rem 1rem; background-color: #007bff; color: white; text-decoration: none; border-radius: 4px;">Login</a>
+                        <a asp-page="/Register" style="padding: 0.5rem 1rem; background-color: #28a745; color: white; text-decoration: none; border-radius: 4px;">Register</a>
+                    </div>
+                }
             </div>
         </nav>
     </header>

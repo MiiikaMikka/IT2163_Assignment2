@@ -13,6 +13,10 @@ namespace IT2163_Assignment2_234695G.Context
         public DbSet<ApplicationUser> ApplicationUsers { get; set; }
         public DbSet<AuditLog> AuditLogs { get; set; }
 
+        // DbSets for UserSessions and UserPasswordHistory
+        public DbSet<UserSession> UserSessions { get; set; }
+        public DbSet<UserPasswordHistory> UserPasswordHistory { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -30,6 +34,20 @@ namespace IT2163_Assignment2_234695G.Context
                 .WithMany()
                 .HasForeignKey(al => al.UserID)
                 .OnDelete(DeleteBehavior.Restrict); // Prevent cascading delete
+
+
+            // Optional: You can configure indexes, relationships, etc. here
+            modelBuilder.Entity<UserSession>()
+                .HasOne(s => s.User)
+                .WithMany()
+                .HasForeignKey(s => s.UserId)
+                .OnDelete(DeleteBehavior.Cascade); // Cascade delete if user is deleted
+
+            modelBuilder.Entity<UserPasswordHistory>()
+                .HasOne(p => p.User)
+                .WithMany()
+                .HasForeignKey(p => p.UserId)
+                .OnDelete(DeleteBehavior.Cascade); // Cascade delete if user is deleted
         }
     }
 

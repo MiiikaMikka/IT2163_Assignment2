@@ -1,0 +1,21 @@
+﻿@page
+@model IT2163_Assignment2_234695G.Pages.VerifyOTPModel
+@{
+    ViewData["Title"] = "Verify OTP";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form method="post">
+    <div class="form-group">
+        <label for="OTP">Enter the OTP sent to your email</label>
+        <input asp-for="OTP" class="form-control" id="OTP" />
+        <span asp-validation-for="OTP" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Verify OTP</button>
+</form>
+
+<hr />
+
+<p>If you did not receive the OTP, <a href="/Login">click here to try again</a>.</p>

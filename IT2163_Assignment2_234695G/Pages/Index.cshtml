@@ -4,7 +4,26 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<h1>Welcome to the Home Page</h1>
+
+@if (Model.User != null)
+{
+    <div>
+        <h2>Hello, @Model.CurrentUser.FirstName @Model.CurrentUser.LastName!</h2>
+        <p>Email: @Model.CurrentUser.Email</p>
+        <p>Gender: @Model.CurrentUser.Gender</p>
+        <p>NRIC: @Model.CurrentUser.EncryptedNRIC</p>
+        <p>About Me: @Model.CurrentUser.WhoAmI</p>
+
+        <p><a href="/ChangePassword">Change Password</a></p>
+
+
+    </div>
+}
+else
+{
+    <div>
+        <h2>Welcome, Ace_Something!</h2>
+        <p>Please <a asp-page="Login">log in</a> to access your details.</p>
+    </div>
+}

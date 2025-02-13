@@ -18,8 +18,16 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\DonTJ\Desktop\School\Year 2\Year 2 Sem 2\Application Security\Assignment_2\IT2163_Assignment2_234695G\IT2163_Assignment2_234695G
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/DonTJ/Desktop/School/Year 2/Year 2 Sem 2/Application Security/Assignment_2/IT2163_Assignment2_234695G/IT2163_Assignment2_234695G/Pages/ChangePassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2hhbmdlUGFzc3dvcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/DonTJ/Desktop/School/Year 2/Year 2 Sem 2/Application Security/Assignment_2/IT2163_Assignment2_234695G/IT2163_Assignment2_234695G/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DonTJ/Desktop/School/Year 2/Year 2 Sem 2/Application Security/Assignment_2/IT2163_Assignment2_234695G/IT2163_Assignment2_234695G/Pages/ForgotPasswordModel.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRm9yZ290UGFzc3dvcmRNb2RlbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/DonTJ/Desktop/School/Year 2/Year 2 Sem 2/Application Security/Assignment_2/IT2163_Assignment2_234695G/IT2163_Assignment2_234695G/Pages/Index.cshtml]
@@ -30,12 +38,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/DonTJ/Desktop/School/Year 2/Year 2 Sem 2/Application Security/Assignment_2/IT2163_Assignment2_234695G/IT2163_Assignment2_234695G/Pages/Logout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9nb3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/DonTJ/Desktop/School/Year 2/Year 2 Sem 2/Application Security/Assignment_2/IT2163_Assignment2_234695G/IT2163_Assignment2_234695G/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/DonTJ/Desktop/School/Year 2/Year 2 Sem 2/Application Security/Assignment_2/IT2163_Assignment2_234695G/IT2163_Assignment2_234695G/Pages/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVnaXN0ZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DonTJ/Desktop/School/Year 2/Year 2 Sem 2/Application Security/Assignment_2/IT2163_Assignment2_234695G/IT2163_Assignment2_234695G/Pages/ResetPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVzZXRQYXNzd29yZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/DonTJ/Desktop/School/Year 2/Year 2 Sem 2/Application Security/Assignment_2/IT2163_Assignment2_234695G/IT2163_Assignment2_234695G/Pages/Shared/_ValidationScriptsPartial.cshtml]
